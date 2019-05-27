@@ -8,7 +8,7 @@ import com.barclaysbank.rewards.resource.beans.Resource_BalanceResp;
 
 @RestController
 @RequestMapping("/balance")
-public class Process_BalanceImpl implements Resource_Balance_I{
+public class Resource_BalanceImpl implements Resource_Balance_I{
 
 	@Override
 	public Resource_BalanceResp getBalance(String clientId, String channelId, String cardNum, String corelationId,

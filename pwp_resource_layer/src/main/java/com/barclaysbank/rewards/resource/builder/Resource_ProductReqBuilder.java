@@ -2,7 +2,7 @@ package com.barclaysbank.rewards.resource.builder;
 
 import org.springframework.stereotype.Component;
 
-@Component("proc_redm_resp_bui")
-public class Process_RedeemRespBuilder {
+@Component("proc_prod_req_bui")
+public class Resource_ProductReqBuilder {
 
 }
