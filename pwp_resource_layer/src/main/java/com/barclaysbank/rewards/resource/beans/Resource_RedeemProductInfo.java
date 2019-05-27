@@ -4,6 +4,13 @@ public class Resource_RedeemProductInfo {
 	private String productId;
 	private String productName;
 	private String productType;
+	private double product;
+	public double getProduct() {
+		return product;
+	}
+	public void setProduct(double product) {
+		this.product = product;
+	}
 	public String getProductId() {
 		return productId;
 	}
@@ -31,6 +38,8 @@ public class Resource_RedeemProductInfo {
 		builder.append(productName);
 		builder.append(", productType=");
 		builder.append(productType);
+		builder.append(", product=");
+		builder.append(product);
 		builder.append("]");
 		return builder.toString();
 	}
