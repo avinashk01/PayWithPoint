@@ -4,9 +4,8 @@ import org.springframework.stereotype.Component;
 
 @Component("proc_redm_resp")
 public class Resource_RedeemResp {
-	private Resource_RedeemInfo redeemInfo;
 	private Resource_StatusBlock statusBlock;
-	private Resource_RedeemProductInfo redeemProdInfo;
+	private Resource_RedeemInfo redeemInfo;
 	public Resource_StatusBlock getStatusBlock() {
 		return statusBlock;
 	}
@@ -19,12 +18,6 @@ public class Resource_RedeemResp {
 	public void setRedeemInfo(Resource_RedeemInfo redeemInfo) {
 		this.redeemInfo = redeemInfo;
 	}
-	public Resource_RedeemProductInfo getRedeemProdInfo() {
-		return redeemProdInfo;
-	}
-	public void setRedeemProdInfo(Resource_RedeemProductInfo redeemProdInfo) {
-		this.redeemProdInfo = redeemProdInfo;
-	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -32,11 +25,9 @@ public class Resource_RedeemResp {
 		builder.append(statusBlock);
 		builder.append(", redeemInfo=");
 		builder.append(redeemInfo);
-		builder.append(", redeemProdInfo=");
-		builder.append(redeemProdInfo);
 		builder.append("]");
 		return builder.toString();
 	}
-		
+	
 
 }
