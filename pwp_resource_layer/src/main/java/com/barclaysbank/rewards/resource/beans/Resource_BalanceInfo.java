@@ -4,10 +4,10 @@ import org.springframework.stereotype.Component;
 
 @Component("proc_bal_info")
 public class Resource_BalanceInfo {
-	private long availablePts;
-	private long earnedPts;
 	private long usedPts;
+	private long earnedPts;
 	private long pendingPts;
+	private long availablePts;
 	public long getAvailablePts() {
 		return availablePts;
 	}

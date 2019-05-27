@@ -2,9 +2,9 @@
 package com.barclaysbank.rewards.resource.beans;
 
 public class Resource_CustomerContext {
-	private String cardNum;
 	private int cvvNum;
 	private String expDate;
+	private String cardNum;
 	private String nameOnCard;
 	
 	public String getCardNum() {

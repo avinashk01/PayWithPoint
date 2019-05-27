@@ -1,10 +1,10 @@
 package com.barclaysbank.rewards.resource.beans;
 
 public class Resource_ClientContext {
+	private String msgTs;
 	private String clientId;
 	private String channelId;
 	private String correlationId;
-	private String msgTs;
 	
 	public String getClientId() {
 		return clientId;

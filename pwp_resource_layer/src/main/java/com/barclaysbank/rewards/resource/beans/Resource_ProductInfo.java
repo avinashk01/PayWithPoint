@@ -7,8 +7,8 @@ public class Resource_ProductInfo {
 	private String id;
 	private String name;
 	private String desc;
-	private String expdate;
 	private String price;
+	private String expdate;
 	private boolean isStock;
 	private String vendorName;
 	public String getId() {
