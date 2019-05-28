@@ -1,43 +1,30 @@
-
 package com.barclaysbank.rewards.resource.beans;
 
 public class Resource_CustomerContext {
-	private int cvvNum;
-	private String expDate;
-	private String nameOnCard;
-	
-	public int getCvvNum() {
-		return cvvNum;
+	private Resource_ServiceDtls svcDtls;
+	private Resource_CardDetails custContext;
+	public Resource_ServiceDtls getSvcDtls() {
+		return svcDtls;
 	}
-	public void setCvvNum(int cvvNum) {
-		this.cvvNum = cvvNum;
+	public void setSvcDtls(Resource_ServiceDtls svcDtls) {
+		this.svcDtls = svcDtls;
 	}
-	public String getExpDate() {
-		return expDate;
+	public Resource_CardDetails getCustContext() {
+		return custContext;
+	}
+	public void setCustContext(Resource_CardDetails custContext) {
+		this.custContext = custContext;
 	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Resource_CustomerContext [cvvNum=");
-		builder.append(cvvNum);
-		builder.append(", expDate=");
-		builder.append(expDate);
-		builder.append(", nameOnCard=");
-		builder.append(nameOnCard);
+		builder.append("Resource_RequestBody [svcDtls=");
+		builder.append(svcDtls);
+		builder.append(", custContext=");
+		builder.append(custContext);
 		builder.append("]");
 		return builder.toString();
 	}
-	public void setExpDate(String expDate) {
-		this.expDate = expDate;
-	}
-	public String getNameOnCard() {
-		return nameOnCard;
-	}
-	public void setNameOnCard(String nameOnCard) {
-		this.nameOnCard = nameOnCard;
-	}
-	
-	
 	
 
 }

@@ -5,26 +5,25 @@ import org.springframework.stereotype.Component;
 @Component("proc_redm_req")
 public class Resource_RedeemReq {
 	private Resource_ServiceDtls svcDtls;
-	private Resource_RequestHeader clientContext;
-	private Resource_CustomerContext custContext;
+	private Resource_ClientContext clientContext;
+	private Resource_CardDetails custContext;
 	private Resource_RedeemProductInfo redeemProdInfo;
-	
 	public Resource_ServiceDtls getSvcDtls() {
 		return svcDtls;
 	}
 	public void setSvcDtls(Resource_ServiceDtls svcDtls) {
 		this.svcDtls = svcDtls;
 	}
-	public Resource_RequestHeader getClientContext() {
+	public Resource_ClientContext getClientContext() {
 		return clientContext;
 	}
-	public void setClientContext(Resource_RequestHeader clientContext) {
+	public void setClientContext(Resource_ClientContext clientContext) {
 		this.clientContext = clientContext;
 	}
-	public Resource_CustomerContext getCustContext() {
+	public Resource_CardDetails getCustContext() {
 		return custContext;
 	}
-	public void setCustContext(Resource_CustomerContext custContext) {
+	public void setCustContext(Resource_CardDetails custContext) {
 		this.custContext = custContext;
 	}
 	public Resource_RedeemProductInfo getRedeemProdInfo() {
@@ -47,5 +46,6 @@ public class Resource_RedeemReq {
 		builder.append("]");
 		return builder.toString();
 	}
+	
 	
 }

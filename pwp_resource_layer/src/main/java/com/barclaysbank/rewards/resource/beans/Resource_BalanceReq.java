@@ -5,24 +5,24 @@ import org.springframework.stereotype.Component;
 @Component("reso_bal_req")
 public class Resource_BalanceReq {
 	private Resource_ServiceDtls svcDtls;
-	private Resource_RequestHeader clientContext;
-	private Resource_CustomerContext custContext;
+	private Resource_ClientContext clientContext;
+	private Resource_CardDetails custContext;
 	public Resource_ServiceDtls getSvcDtls() {
 		return svcDtls;
 	}
 	public void setSvcDtls(Resource_ServiceDtls svcDtls) {
 		this.svcDtls = svcDtls;
 	}
-	public Resource_RequestHeader getClientContext() {
+	public Resource_ClientContext getClientContext() {
 		return clientContext;
 	}
-	public void setClientContext(Resource_RequestHeader clientContext) {
+	public void setClientContext(Resource_ClientContext clientContext) {
 		this.clientContext = clientContext;
 	}
-	public Resource_CustomerContext getCustContext() {
+	public Resource_CardDetails getCustContext() {
 		return custContext;
 	}
-	public void setCustContext(Resource_CustomerContext custContext) {
+	public void setCustContext(Resource_CardDetails custContext) {
 		this.custContext = custContext;
 	}
 	@Override
@@ -37,5 +37,7 @@ public class Resource_BalanceReq {
 		builder.append("]");
 		return builder.toString();
 	}
+	
+	
 			
 }

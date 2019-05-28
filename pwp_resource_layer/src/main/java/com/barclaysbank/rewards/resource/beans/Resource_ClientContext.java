@@ -1,11 +1,16 @@
 package com.barclaysbank.rewards.resource.beans;
 
-public class Resource_RequestHeader {
+public class Resource_ClientContext {
 	private String msgTs;
 	private String clientId;
 	private String channelId;
 	private String correlationId;
-	
+	public String getMsgTs() {
+		return msgTs;
+	}
+	public void setMsgTs(String msgTs) {
+		this.msgTs = msgTs;
+	}
 	public String getClientId() {
 		return clientId;
 	}
@@ -24,23 +29,17 @@ public class Resource_RequestHeader {
 	public void setCorrelationId(String correlationId) {
 		this.correlationId = correlationId;
 	}
-	public String getMsgTs() {
-		return msgTs;
-	}
-	public void setMsgTs(String msgTs) {
-		this.msgTs = msgTs;
-	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Resource_ClientContext [clientId=");
+		builder.append("Resource_ClientContext [msgTs=");
+		builder.append(msgTs);
+		builder.append(", clientId=");
 		builder.append(clientId);
 		builder.append(", channelId=");
 		builder.append(channelId);
 		builder.append(", correlationId=");
 		builder.append(correlationId);
-		builder.append(", msgTs=");
-		builder.append(msgTs);
 		builder.append("]");
 		return builder.toString();
 	}
