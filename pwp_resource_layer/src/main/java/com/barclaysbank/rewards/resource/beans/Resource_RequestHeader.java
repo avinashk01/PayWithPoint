@@ -1,6 +1,6 @@
 package com.barclaysbank.rewards.resource.beans;
 
-public class Resource_ClientContext {
+public class Resource_RequestHeader {
 	private String msgTs;
 	private String clientId;
 	private String channelId;
