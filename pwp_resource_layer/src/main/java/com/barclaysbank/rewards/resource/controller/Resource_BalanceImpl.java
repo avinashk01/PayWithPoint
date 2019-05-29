@@ -1,4 +1,4 @@
-package com.barclaysbank.rewards.resource.impl;
+package com.barclaysbank.rewards.resource.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,23 +8,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.barclaysbank.rewards.resource.Resource_Balance_I;
 import com.barclaysbank.rewards.resource.beans.Resource_BalanceResp;
-import com.barclaysbank.rewards.resource.beans.Resource_ClientContext;
 import com.barclaysbank.rewards.resource.beans.Resource_CustomerContext;
 
 @RestController
-@RequestMapping("/balance")
-public class Resource_BalanceImpl implements Resource_Balance_I{
+@RequestMapping("/pwpservice/balance")
+public class Resource_BalanceImpl{
 	
 	@GetMapping(value="{cardNum}",produces={"application/json"})
 	@ResponseBody
 	public Resource_BalanceResp getBalance(
 			@PathVariable("cardNum") String cardNum,
-			@RequestHeader Resource_ClientContext clientContext,
-			@RequestBody Resource_CustomerContext custContext
+			@RequestHeader("msgTs") String msgTs,
+			@RequestHeader("clientId") String clientId,
+			@RequestHeader("channelId") String channelId,
+			@RequestHeader("correlationId") String correlationId,
+			@RequestBody(required=false) Resource_CustomerContext custContext
 			) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

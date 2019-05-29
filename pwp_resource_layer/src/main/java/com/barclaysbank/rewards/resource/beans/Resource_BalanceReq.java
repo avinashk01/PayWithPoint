@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class Resource_BalanceReq {
 	private Resource_ServiceDtls svcDtls;
 	private Resource_ClientContext clientContext;
-	private Resource_CardDetails custContext;
+	private Resource_CardDetails cardDtls;
 	public Resource_ServiceDtls getSvcDtls() {
 		return svcDtls;
 	}
@@ -19,11 +19,11 @@ public class Resource_BalanceReq {
 	public void setClientContext(Resource_ClientContext clientContext) {
 		this.clientContext = clientContext;
 	}
-	public Resource_CardDetails getCustContext() {
-		return custContext;
+	public Resource_CardDetails getCardDtls() {
+		return cardDtls;
 	}
-	public void setCustContext(Resource_CardDetails custContext) {
-		this.custContext = custContext;
+	public void setCardDtls(Resource_CardDetails cardDtls) {
+		this.cardDtls = cardDtls;
 	}
 	@Override
 	public String toString() {
@@ -32,12 +32,11 @@ public class Resource_BalanceReq {
 		builder.append(svcDtls);
 		builder.append(", clientContext=");
 		builder.append(clientContext);
-		builder.append(", custContext=");
-		builder.append(custContext);
+		builder.append(", cardDtls=");
+		builder.append(cardDtls);
 		builder.append("]");
 		return builder.toString();
 	}
-	
 	
 			
 }

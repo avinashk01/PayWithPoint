@@ -7,7 +7,7 @@ public class Resource_ProductReq {
 	private String productCategoryName;
 	private Resource_ServiceDtls svcDtls;
 	private Resource_ClientContext clientContext;
-	private Resource_CardDetails custContext;
+	private Resource_CardDetails cardDtls;
 	public String getProductCategoryName() {
 		return productCategoryName;
 	}
@@ -23,6 +23,15 @@ public class Resource_ProductReq {
 	public Resource_ClientContext getClientContext() {
 		return clientContext;
 	}
+	public void setClientContext(Resource_ClientContext clientContext) {
+		this.clientContext = clientContext;
+	}
+	public Resource_CardDetails getCardDtls() {
+		return cardDtls;
+	}
+	public void setCardDtls(Resource_CardDetails cardDtls) {
+		this.cardDtls = cardDtls;
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -32,19 +41,10 @@ public class Resource_ProductReq {
 		builder.append(svcDtls);
 		builder.append(", clientContext=");
 		builder.append(clientContext);
-		builder.append(", custContext=");
-		builder.append(custContext);
+		builder.append(", cardDtls=");
+		builder.append(cardDtls);
 		builder.append("]");
 		return builder.toString();
 	}
-	public void setClientContext(Resource_ClientContext clientContext) {
-		this.clientContext = clientContext;
-	}
-	public Resource_CardDetails getCustContext() {
-		return custContext;
-	}
-	public void setCustContext(Resource_CardDetails custContext) {
-		this.custContext = custContext;
-	}
-		
+			
 }
