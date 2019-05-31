@@ -1,0 +1,57 @@
+
+CLIENT
+======
+insert into `client` (`clnt_id`, `clnt_name`, `desc`) values('1','firefox-b','It support firefox mojila browser');
+insert into `client` (`clnt_id`, `clnt_name`, `desc`) values('2','crome','It support google crome browser');
+insert into `client` (`clnt_id`, `clnt_name`, `desc`) values('3','opera','It support opera browser');
+insert into `client` (`clnt_id`, `clnt_name`, `desc`) values('4','i-explorer','It support Microsoft Internet explorer browser');
+
+CHANNEL
+=======
+insert into `channel` (`chnl_id`, `chnl_name`, `desc`) values('1','web','It support web request');
+insert into `channel` (`chnl_id`, `chnl_name`, `desc`) values('2','anroid','It support anroid request');
+insert into `channel` (`chnl_id`, `chnl_name`, `desc`) values('3','ios','It support anroid request');
+insert into `channel` (`chnl_id`, `chnl_name`, `desc`) values('4','symbien','It support symbien request');
+
+
+CUSTOMER
+========
+insert into `customer` (`cust_id`, `cust_name`, `card_num`,`cvv`,`exp_date`) values('1','Denial','5298000100265987','895','2022-02-05');
+insert into `customer` (`cust_id`, `cust_name`, `card_num`,`cvv`,`exp_date`) values('2','Samual','5298000100287456','147','2021-05-3');
+insert into `customer` (`cust_id`, `cust_name`, `card_num`,`cvv`,`exp_date`) values('3','Rocky','5298000100221548','325','2025-03-05');
+insert into `customer` (`cust_id`, `cust_name`, `card_num`,`cvv`,`exp_date`) values('4','Prince','5298000100296314','852','2024-06-25');
+insert into `customer` (`cust_id`, `cust_name`, `card_num`,`cvv`,`exp_date`) values('5','Mark','5298000100214568','521','2021-07-19');
+
+PRODUCT
+=======
+insert into `product` (`prod_id`, `prod_name`, `prod_desc`,`price`,`is_stock`,`vendor_name`) values('1','Keybord','Wireless with 10m range','995','1','Lenevo');
+insert into `product` (`prod_id`, `prod_name`, `prod_desc`,`price`,`is_stock`,`vendor_name`) values('2','Mouse','Wire 1000dpi range','250','1','Longitech');
+insert into `product` (`prod_id`, `prod_name`, `prod_desc`,`price`,`is_stock`,`vendor_name`) values('3','Pendrive','32 GB Fast Transfer','999','1','Sandisk');
+insert into `product` (`prod_id`, `prod_name`, `prod_desc`,`price`,`is_stock`,`vendor_name`) values('4','HeadPhone','Wireless 220db Bass rich','2200','1','Boat');
+insert into `product` (`prod_id`, `prod_name`, `prod_desc`,`price`,`is_stock`,`vendor_name`) values('5','Earphone','Wire Ultimate HQ Sound','995','1','Philipse');
+insert into `product` (`prod_id`, `prod_name`, `prod_desc`,`price`,`is_stock`,`vendor_name`) values('6','Data Cable','3m long lenght','995','0','Sandisk');
+
+REWARD
+======
+insert into `reward` (`reward_id`, `avail_pts`, `earn_pts`,`used_pts`,`pend_pts`,`card_num`) values('1','16025','2905145','1785745','5024','5298000100265987');
+insert into `reward` (`reward_id`, `avail_pts`, `earn_pts`,`used_pts`,`pend_pts`,`card_num`) values('2','15074','3605963','7601951','5024','5298000100287456');
+insert into `reward` (`reward_id`, `avail_pts`, `earn_pts`,`used_pts`,`pend_pts`,`card_num`) values('3','39025','5305782','5796159','5024','5298000100221548');
+insert into `reward` (`reward_id`, `avail_pts`, `earn_pts`,`used_pts`,`pend_pts`,`card_num`) values('4','76070','6405254','3347785','5024','5298000100296314');
+insert into `reward` (`reward_id`, `avail_pts`, `earn_pts`,`used_pts`,`pend_pts`,`card_num`) values('5','66145','9205145','1800145','5024','5298000100214568');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
