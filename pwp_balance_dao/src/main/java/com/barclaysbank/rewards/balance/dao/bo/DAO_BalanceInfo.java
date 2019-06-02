@@ -1,4 +1,4 @@
-package com.barclaysbank.rewards.balance.dao.beans;
+package com.barclaysbank.rewards.balance.dao.bo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

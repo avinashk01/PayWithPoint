@@ -1,18 +1,50 @@
-package com.barclaysbank.rewards.process.beans;
+package com.barclaysbank.rewards.redeem.dao.bo;
 
 import java.util.Date;
 
-public class Process_RedeemInfo {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="REDEEM")
+public class DAO_RedeemProductInfo {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="ORDER_ID")
 	private int orderId;
-	private Date purchaseDate;
-	private Date deliveryDate;
+	@Column(name="PRODUCT_ID")
+	private int productId;
+	@Column(name="PRODUCT_NAME")
 	private String productName;
+	@Column(name="PURCHASE_DATE")
+	private Date purchaseDate;
+	@Column(name="DELIVERY_DATE")
+	private Date deliveryDate;
+	@Column(name="CARD_NUM")
+	private String cardNum;
+	@Column(name="PRICE")
 	private String price;
+	public String getCardNum() {
+		return cardNum;
+	}
+	public void setCardNum(String cardNum) {
+		this.cardNum = cardNum;
+	}
 	public int getOrderId() {
 		return orderId;
 	}
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
+	}
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 	public Date getPurchaseDate() {
 		return purchaseDate;
@@ -41,8 +73,12 @@ public class Process_RedeemInfo {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Process_RedeemInfo [orderId=");
+		builder.append("DAO_RedeemProductInfo [orderId=");
 		builder.append(orderId);
+		builder.append(", productId=");
+		builder.append(productId);
+		builder.append(", cardNum=");
+		builder.append(cardNum);
 		builder.append(", purchaseDate=");
 		builder.append(purchaseDate);
 		builder.append(", deliveryDate=");
@@ -54,5 +90,8 @@ public class Process_RedeemInfo {
 		builder.append("]");
 		return builder.toString();
 	}
+	
+	
+	
 
 }

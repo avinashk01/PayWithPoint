@@ -1,33 +1,34 @@
 package com.barclaysbank.rewards.resource.beans;
 
-import org.springframework.stereotype.Component;
+import java.util.List;
 
-@Component("proc_redm_resp")
 public class Resource_RedeemResp {
 	private Resource_StatusBlock statusBlock;
-	private Resource_RedeemInfo redeemInfo;
+	private List<Resource_RedeemInfo> redeemInfoList;
 	public Resource_StatusBlock getStatusBlock() {
 		return statusBlock;
 	}
 	public void setStatusBlock(Resource_StatusBlock statusBlock) {
 		this.statusBlock = statusBlock;
 	}
-	public Resource_RedeemInfo getRedeemInfo() {
-		return redeemInfo;
+	public List<Resource_RedeemInfo> getRedeemInfoList() {
+		return redeemInfoList;
 	}
-	public void setRedeemInfo(Resource_RedeemInfo redeemInfo) {
-		this.redeemInfo = redeemInfo;
+	public void setRedeemInfoList(List<Resource_RedeemInfo> redeemInfoList) {
+		this.redeemInfoList = redeemInfoList;
 	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Resource_RedeemResp [statusBlock=");
 		builder.append(statusBlock);
-		builder.append(", redeemInfo=");
-		builder.append(redeemInfo);
+		builder.append(", redeemInfoList=");
+		builder.append(redeemInfoList);
 		builder.append("]");
 		return builder.toString();
 	}
+	
+	
 	
 
 }

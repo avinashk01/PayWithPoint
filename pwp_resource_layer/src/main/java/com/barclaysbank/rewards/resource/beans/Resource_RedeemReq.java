@@ -1,8 +1,5 @@
 package com.barclaysbank.rewards.resource.beans;
 
-import org.springframework.stereotype.Component;
-
-@Component("proc_redm_req")
 public class Resource_RedeemReq {
 	private Resource_ServiceDtls svcDtls;
 	private Resource_CardDetails cardDtls;

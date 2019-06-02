@@ -2,27 +2,17 @@ package com.barclaysbank.rewards.resource.beans;
 
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
-
-@Component("reso_redm_info")
 public class Resource_RedeemInfo {
-	private String orderId;
-	private String productId;
+	private int orderId;
 	private Date purchaseDate;
+	private Date deliveryDate;
 	private String productName;
-	private double productPoints;
-	private Date exptDeliveryDate;
-	public String getOrderId() {
+	private String price;
+	public int getOrderId() {
 		return orderId;
 	}
-	public void setOrderId(String orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
-	}
-	public String getProductId() {
-		return productId;
-	}
-	public void setProductId(String productId) {
-		this.productId = productId;
 	}
 	public Date getPurchaseDate() {
 		return purchaseDate;
@@ -30,43 +20,40 @@ public class Resource_RedeemInfo {
 	public void setPurchaseDate(Date purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
+	public Date getDeliveryDate() {
+		return deliveryDate;
+	}
+	public void setDeliveryDate(Date deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}
 	public String getProductName() {
 		return productName;
 	}
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public double getProductPoints() {
-		return productPoints;
+	public String getPrice() {
+		return price;
 	}
-	public void setProductPoints(double productPoints) {
-		this.productPoints = productPoints;
-	}
-	public Date getExptDeliveryDate() {
-		return exptDeliveryDate;
-	}
-	public void setExptDeliveryDate(Date exptDeliveryDate) {
-		this.exptDeliveryDate = exptDeliveryDate;
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Resource_RedeemInfo [orderId=");
 		builder.append(orderId);
-		builder.append(", productId=");
-		builder.append(productId);
 		builder.append(", purchaseDate=");
 		builder.append(purchaseDate);
+		builder.append(", deliveryDate=");
+		builder.append(deliveryDate);
 		builder.append(", productName=");
 		builder.append(productName);
-		builder.append(", productPoints=");
-		builder.append(productPoints);
-		builder.append(", exptDeliveryDate=");
-		builder.append(exptDeliveryDate);
+		builder.append(", price=");
+		builder.append(price);
 		builder.append("]");
 		return builder.toString();
 	}
-	
 	
 	
 	

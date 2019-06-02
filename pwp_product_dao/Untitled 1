@@ -40,6 +40,16 @@ insert into `reward` (`reward_id`, `avail_pts`, `earn_pts`,`used_pts`,`pend_pts`
 insert into `reward` (`reward_id`, `avail_pts`, `earn_pts`,`used_pts`,`pend_pts`,`card_num`) values('5','66145','9205145','1800145','5024','5298000100214568');
 
 
+REDEEM
+======
+insert into `redeem` (`order_id`, `purchase_date`, `delivery_date`, `product_id`, `card_num`, `price`, `product_name`) values('1','2019-06-01','2019-06-10','1','5298000100265987','995','Keybord');
+insert into `redeem` (`order_id`, `purchase_date`, `delivery_date`, `product_id`, `card_num`, `price`, `product_name`) values('2','2019-05-30','2019-06-03','2','5298000100265987','250','Mouse');
+insert into `redeem` (`order_id`, `purchase_date`, `delivery_date`, `product_id`, `card_num`, `price`, `product_name`) values('3','2019-06-03','2019-06-07','3','5298000100265987','999','Pendrive');
+insert into `redeem` (`order_id`, `purchase_date`, `delivery_date`, `product_id`, `card_num`, `price`, `product_name`) values('4','2019-05-29','2019-06-05','4','5298000100287456','2200','HeadPhone');
+insert into `redeem` (`order_id`, `purchase_date`, `delivery_date`, `product_id`, `card_num`, `price`, `product_name`) values('5','2019-06-06','2019-06-10','5','5298000100214568','995','Earphone');
+insert into `redeem` (`order_id`, `purchase_date`, `delivery_date`, `product_id`, `card_num`, `price`, `product_name`) values('6','2019-06-07','2019-06-12','6','5298000100214568','995','Data Cable');
+
+
 
 
 

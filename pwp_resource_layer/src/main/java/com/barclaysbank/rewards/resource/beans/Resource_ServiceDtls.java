@@ -4,6 +4,14 @@ public class Resource_ServiceDtls {
 	private String svcName;
 	private String apiName;
 	private String version;
+	
+	public Resource_ServiceDtls() {}
+	
+	public Resource_ServiceDtls(String svcName, String apiName, String version) {
+		this.svcName = svcName;
+		this.apiName = apiName;
+		this.version = version;
+	}
 	public String getSvcName() {
 		return svcName;
 	}

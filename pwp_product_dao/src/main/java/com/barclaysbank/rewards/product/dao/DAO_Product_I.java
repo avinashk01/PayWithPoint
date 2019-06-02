@@ -1,12 +1,9 @@
 package com.barclaysbank.rewards.product.dao;
 
-import org.springframework.stereotype.Repository;
+import java.util.List;
+import com.barclaysbank.rewards.product.dao.bo.DAO_ProductInfo;
 
-import com.barclaysbank.rewards.product.dao.beans.DAO_ProductReq;
-import com.barclaysbank.rewards.product.dao.beans.DAO_ProductResp;
-
-@Repository("dao_prod_i")
 public interface DAO_Product_I {
-	DAO_ProductResp getProduct(DAO_ProductReq req);
+	List<DAO_ProductInfo> getProduct(double price);
 
 }

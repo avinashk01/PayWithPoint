@@ -5,6 +5,15 @@ public class Resource_ClientContext {
 	private String clientId;
 	private String channelId;
 	private String correlationId;
+	
+	public Resource_ClientContext() {}
+	
+	public Resource_ClientContext(String msgTs, String clientId, String channelId, String correlationId) {
+		this.msgTs = msgTs;
+		this.clientId = clientId;
+		this.channelId = channelId;
+		this.correlationId = correlationId;
+	}
 	public String getMsgTs() {
 		return msgTs;
 	}

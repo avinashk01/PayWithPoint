@@ -2,7 +2,7 @@ package com.barclaysbank.rewards.resource.utils;
 
 import org.springframework.stereotype.Component;
 
-@Component("reso_bal_cons")
+@Component
 public class ResourceLayerConst {
 
 }

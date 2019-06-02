@@ -4,6 +4,8 @@ public class Resource_CustomerContext {
 	private Resource_ServiceDtls svcDtls;
 	private Resource_CardDetails cardDtls;
 	
+	public Resource_CustomerContext() {}
+	
 	public Resource_ServiceDtls getSvcDtls() {
 		return svcDtls;
 	}

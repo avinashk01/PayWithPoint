@@ -1,12 +1,10 @@
 package com.barclaysbank.rewards.redeem.dao;
 
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-import com.barclaysbank.rewards.redeem.dao.beans.DAO_RedeemReq;
-import com.barclaysbank.rewards.redeem.dao.beans.DAO_RedeemResp;
+import com.barclaysbank.rewards.redeem.dao.bo.DAO_RedeemProductInfo;
 
-@Repository("dao_redm_i")
 public interface DAO_Redeem_I {
-	DAO_RedeemResp getProduct(DAO_RedeemReq req);
+	List<DAO_RedeemProductInfo> getProduct(String cardNum);
 
 }

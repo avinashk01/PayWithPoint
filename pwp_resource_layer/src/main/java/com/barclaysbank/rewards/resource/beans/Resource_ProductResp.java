@@ -2,9 +2,6 @@ package com.barclaysbank.rewards.resource.beans;
 
 import java.util.List;
 
-import org.springframework.stereotype.Component;
-
-@Component("proc_prod_resp")
 public class Resource_ProductResp {
 	private Resource_StatusBlock statusBlock;
 	private List<Resource_ProductInfo> productList;

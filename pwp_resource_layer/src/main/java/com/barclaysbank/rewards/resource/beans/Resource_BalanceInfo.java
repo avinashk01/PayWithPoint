@@ -1,6 +1,5 @@
 package com.barclaysbank.rewards.resource.beans;
 
-//@Component("proc_bal_info")
 public class Resource_BalanceInfo {
 	private long usedPts;
 	private long earnedPts;

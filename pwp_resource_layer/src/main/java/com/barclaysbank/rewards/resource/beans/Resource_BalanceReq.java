@@ -1,8 +1,5 @@
 package com.barclaysbank.rewards.resource.beans;
 
-import org.springframework.stereotype.Component;
-
-@Component("reso_bal_req")
 public class Resource_BalanceReq {
 	private Resource_ServiceDtls svcDtls;
 	private Resource_ClientContext clientContext;
