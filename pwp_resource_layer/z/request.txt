@@ -21,3 +21,55 @@ BODY
       "nameOnCard":"Denial"
    }
 }
+
+
+
+
+RESPONSE
+========
+{
+    "statusBlock": {
+        "respCode": "0",
+        "respMsg": "Success",
+        "errorCode": null,
+        "errorMsg": null
+    },
+    "productList": [
+        {
+            "name": "Keybord",
+            "description": "Wireless with 10m range",
+            "price": 599,
+            "vendorName": "Lenevo"
+        },
+        {
+            "name": "Mouse",
+            "description": "Wire 1000dpi range",
+            "price": 250,
+            "vendorName": "Longitech"
+        },
+        {
+            "name": "Pendrive",
+            "description": "32 GB Fast Transfer",
+            "price": 999,
+            "vendorName": "Sandisk"
+        },
+        {
+            "name": "HeadPhone",
+            "description": "Wireless 220db Bass rich",
+            "price": 2200,
+            "vendorName": "Boat"
+        },
+        {
+            "name": "Earphone",
+            "description": "Wire Ultimate HQ Sound",
+            "price": 1550,
+            "vendorName": "Philipse"
+        },
+        {
+            "name": "Data Cable",
+            "description": "3m long lenght",
+            "price": 150,
+            "vendorName": "Sandisk"
+        }
+    ]
+}
