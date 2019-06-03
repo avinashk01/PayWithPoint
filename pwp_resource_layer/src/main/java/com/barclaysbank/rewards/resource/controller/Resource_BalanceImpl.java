@@ -62,7 +62,7 @@ public class Resource_BalanceImpl{
 		Resource_ClientContext clntContext = new Resource_ClientContext(msgTs, clientId, channelId, correlationId);
 		Resource_StatusBlock stsBlc = new Resource_StatusBlock();
 		try {
-			resourceRequestValidator.validateRequest(clntContext,custContext);
+			resourceRequestValidator.validateRequest(cardNum,clntContext,custContext);
 		} catch (Exception e) {
 			stsBlc.setErrorCode("4050");
 			stsBlc.setErrorMsg("Invalid Request");

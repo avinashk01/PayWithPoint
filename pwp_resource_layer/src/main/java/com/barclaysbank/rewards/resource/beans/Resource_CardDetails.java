@@ -2,25 +2,12 @@
 package com.barclaysbank.rewards.resource.beans;
 
 public class Resource_CardDetails {
-	private String cardNum;
 	private String cvvNum;
 	private String expDate;
 	private String nameOnCard;
 	
 	public Resource_CardDetails() {}
 	
-	public Resource_CardDetails(String cardNum, String cvvNum, String expDate, String nameOnCard) {
-		this.cardNum = cardNum;
-		this.cvvNum = cvvNum;
-		this.expDate = expDate;
-		this.nameOnCard = nameOnCard;
-	}
-	public String getCardNum() {
-		return cardNum;
-	}
-	public void setCardNum(String cardNum) {
-		this.cardNum = cardNum;
-	}
 	public String getCvvNum() {
 		return cvvNum;
 	}
@@ -42,9 +29,7 @@ public class Resource_CardDetails {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Resource_CardDetails [cardNum=");
-		builder.append(cardNum);
-		builder.append(", cvvNum=");
+		builder.append("Resource_CardDetails [cvvNum=");
 		builder.append(cvvNum);
 		builder.append(", expDate=");
 		builder.append(expDate);
@@ -53,7 +38,6 @@ public class Resource_CardDetails {
 		builder.append("]");
 		return builder.toString();
 	}
-		
 	
 	
 

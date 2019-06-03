@@ -16,7 +16,6 @@ BODY
       "version":"v1"
    },
    "cardDtls":{
-      "cardNum":"5298000100265987",
       "cvvNum":"895",
       "expDate":"2022-02-05",
       "nameOnCard":"Denial"

@@ -20,13 +20,13 @@ import com.barclaysbank.rewards.resource.beans.Resource_ServiceDtls;
 
 @Component
 public class ResourceRequestValidator {
-	public void validateRequest(Resource_ClientContext clntContext,Resource_CustomerContext custContext) throws ParseException {
+	public void validateRequest(String cardNum,Resource_ClientContext clntContext,Resource_CustomerContext custContext) throws ParseException {
 		Resource_CardDetails cardDtls = custContext.getCardDtls();
 		Resource_ServiceDtls svcDtls = custContext.getSvcDtls();
 
 		ClientContextValidate(clntContext);
 		serviceDetailsValidate(svcDtls);
-		cardDetailsValidate(cardDtls);
+		cardDetailsValidate(cardNum,cardDtls);
 	}
 
 	@Autowired
@@ -48,10 +48,10 @@ public class ResourceRequestValidator {
 	}
 
 	// validating card details
-	private void cardDetailsValidate(Resource_CardDetails cardDtls) throws ParseException {
-		Validate_CardDetails valCardDtls = dao.getCardDetails(cardDtls.getCardNum());
+	private void cardDetailsValidate(String cardNum,Resource_CardDetails cardDtls) throws ParseException {
+		Validate_CardDetails valCardDtls = dao.getCardDetails(cardNum);
 
-		if(!(cardDtls.getCardNum().equals(valCardDtls.getCardNum()))) {
+		if(!(cardNum.equals(valCardDtls.getCardNum()))) {
 			throw new CustomValidationException("4010", "Wrong Card number");
 		}
 		if(!(cardDtls.getCvvNum().equals(valCardDtls.getCvvNum()))) {

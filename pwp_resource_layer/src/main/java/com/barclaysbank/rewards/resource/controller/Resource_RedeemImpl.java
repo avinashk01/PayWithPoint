@@ -45,7 +45,7 @@ public class Resource_RedeemImpl{
 
 		Resource_StatusBlock stsBlc = new Resource_StatusBlock();
 		try {
-			resourceRequestValidator.validateRequest(clntContext, custContext);
+			resourceRequestValidator.validateRequest(cardNum,clntContext, custContext);
 		} catch (Exception e) {
 			stsBlc.setErrorCode("4050");
 			stsBlc.setErrorMsg("Invalid Request");
