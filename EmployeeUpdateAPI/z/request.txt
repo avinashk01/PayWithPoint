@@ -1,0 +1,14 @@
+
+HEADER
+=======
+clientId - "clnt254"
+channelId - "web"
+
+
+REQUEST BODY
+============
+{
+	"name" : "Mark",
+	"salary" : 23600,
+	"address" : "Green Land"
+}
