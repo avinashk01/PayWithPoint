@@ -1,7 +1,8 @@
 package com.barclaysbank.rewards.process.builder;
 
 import org.springframework.stereotype.Component;
-import com.barclaysbank.rewards.balance.dao.bo.DAO_BalanceInfo;
+
+import com.barclaysbank.rewards.balance.dao.entity.DAO_BalanceInfo;
 import com.barclaysbank.rewards.process.beans.Process_BalanceResp;
 
 @Component

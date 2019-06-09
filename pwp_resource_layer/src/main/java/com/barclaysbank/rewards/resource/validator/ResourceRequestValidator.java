@@ -15,18 +15,15 @@ import com.barclaysbank.rewards.exception.BadRequestException;
 import com.barclaysbank.rewards.exception.CustomValidationException;
 import com.barclaysbank.rewards.resource.beans.Resource_CardDetails;
 import com.barclaysbank.rewards.resource.beans.Resource_ClientContext;
-import com.barclaysbank.rewards.resource.beans.Resource_CustomerContext;
 import com.barclaysbank.rewards.resource.beans.Resource_ServiceDtls;
 
 @Component
 public class ResourceRequestValidator {
-	public void validateRequest(String cardNum,Resource_ClientContext clntContext,Resource_CustomerContext custContext) throws ParseException {
-		Resource_CardDetails cardDtls = custContext.getCardDtls();
-		Resource_ServiceDtls svcDtls = custContext.getSvcDtls();
-
+	public boolean validateRequest(String cardNum,Resource_ClientContext clntContext,Resource_ServiceDtls svcDtls,Resource_CardDetails cardDtls) throws ParseException {
 		ClientContextValidate(clntContext);
 		serviceDetailsValidate(svcDtls);
 		cardDetailsValidate(cardNum,cardDtls);
+		return true;
 	}
 
 	@Autowired

@@ -1,68 +1,52 @@
 package com.barclaysbank.rewards.resource.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.barclaysbank.rewards.exception.BadRequestException;
 import com.barclaysbank.rewards.process.beans.Process_BalanceResp;
 import com.barclaysbank.rewards.process.impl.Process_BalanceImpl;
 import com.barclaysbank.rewards.resource.beans.Resource_BalanceResp;
+import com.barclaysbank.rewards.resource.beans.Resource_CardDetails;
 import com.barclaysbank.rewards.resource.beans.Resource_ClientContext;
-import com.barclaysbank.rewards.resource.beans.Resource_CustomerContext;
+import com.barclaysbank.rewards.resource.beans.Resource_ServiceDtls;
 import com.barclaysbank.rewards.resource.beans.Resource_StatusBlock;
-import com.barclaysbank.rewards.resource.builder.Resource_BalanceReqBuilder;
 import com.barclaysbank.rewards.resource.builder.Resource_BalanceRespBuilder;
 import com.barclaysbank.rewards.resource.validator.ResourceRequestValidator;
 
 @RestController
 @RequestMapping("/pwpservice/balance")
-//@Component
-public class Resource_BalanceImpl{
+public class Resource_BalanceController{
 	@Autowired
 	Process_BalanceImpl processBalanceImpl;
 	@Autowired
 	ResourceRequestValidator resourceRequestValidator;
 	@Autowired
-	Resource_BalanceReqBuilder resourceBalanceReqBuilder;
-	@Autowired
 	Resource_BalanceRespBuilder resourceBalanceRespBuilder;
-
 
 	@GetMapping(value="{cardNum}",produces={"application/json"})
 	public Resource_BalanceResp getBalance(
-
 			@PathVariable("cardNum") String cardNum,
-
 			@RequestHeader("msgTs") String msgTs,
-
 			@RequestHeader("clientId") String clientId,
-
 			@RequestHeader("channelId") String channelId,
-
 			@RequestHeader("correlationId") String correlationId,
-
-			@RequestBody(required=false) Resource_CustomerContext custContext){
-
-
-
-		/*
-		 * public Resource_BalanceResp getBalance(String cardNum,String msgTs,String
-		 * clientId ,String channelId,String correlationId,Resource_CustomerContext
-		 * custContext){
-		 */
-
-
-
+			@RequestHeader("svcName") String svcName ,
+			@RequestHeader("apiName") String apiName,
+			@RequestHeader("version") String version,
+			@RequestHeader("cvvNum") String cvvNum,
+			@RequestHeader("expDate") String expDate,
+			@RequestHeader("nameOnCard") String nameOnCard){
+		
+		Resource_ServiceDtls svcDtls = new Resource_ServiceDtls(svcName,apiName,version);
+		Resource_CardDetails cardDtls = new Resource_CardDetails(cvvNum,expDate,nameOnCard);
 		Resource_ClientContext clntContext = new Resource_ClientContext(msgTs, clientId, channelId, correlationId);
 		Resource_StatusBlock stsBlc = new Resource_StatusBlock();
 		try {
-			resourceRequestValidator.validateRequest(cardNum,clntContext,custContext);
+			resourceRequestValidator.validateRequest(cardNum,clntContext,svcDtls,cardDtls);
 		} catch (Exception e) {
 			stsBlc.setErrorCode("4050");
 			stsBlc.setErrorMsg("Invalid Request");

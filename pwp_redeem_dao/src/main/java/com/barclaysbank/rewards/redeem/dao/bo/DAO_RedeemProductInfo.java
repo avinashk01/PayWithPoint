@@ -27,13 +27,7 @@ public class DAO_RedeemProductInfo {
 	@Column(name="CARD_NUM")
 	private String cardNum;
 	@Column(name="PRICE")
-	private String price;
-	public String getCardNum() {
-		return cardNum;
-	}
-	public void setCardNum(String cardNum) {
-		this.cardNum = cardNum;
-	}
+	private double price;
 	public int getOrderId() {
 		return orderId;
 	}
@@ -45,6 +39,12 @@ public class DAO_RedeemProductInfo {
 	}
 	public void setProductId(int productId) {
 		this.productId = productId;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 	public Date getPurchaseDate() {
 		return purchaseDate;
@@ -58,16 +58,16 @@ public class DAO_RedeemProductInfo {
 	public void setDeliveryDate(Date deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
-	public String getProductName() {
-		return productName;
+	public String getCardNum() {
+		return cardNum;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setCardNum(String cardNum) {
+		this.cardNum = cardNum;
 	}
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	@Override
@@ -77,20 +77,20 @@ public class DAO_RedeemProductInfo {
 		builder.append(orderId);
 		builder.append(", productId=");
 		builder.append(productId);
-		builder.append(", cardNum=");
-		builder.append(cardNum);
+		builder.append(", productName=");
+		builder.append(productName);
 		builder.append(", purchaseDate=");
 		builder.append(purchaseDate);
 		builder.append(", deliveryDate=");
 		builder.append(deliveryDate);
-		builder.append(", productName=");
-		builder.append(productName);
+		builder.append(", cardNum=");
+		builder.append(cardNum);
 		builder.append(", price=");
 		builder.append(price);
 		builder.append("]");
 		return builder.toString();
 	}
-	
+		
 	
 	
 

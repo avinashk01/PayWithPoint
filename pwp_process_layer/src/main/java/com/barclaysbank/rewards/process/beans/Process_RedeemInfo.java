@@ -7,7 +7,7 @@ public class Process_RedeemInfo {
 	private Date purchaseDate;
 	private Date deliveryDate;
 	private String productName;
-	private String price;
+	private double price;
 	public int getOrderId() {
 		return orderId;
 	}
@@ -32,10 +32,10 @@ public class Process_RedeemInfo {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	@Override
@@ -54,5 +54,5 @@ public class Process_RedeemInfo {
 		builder.append("]");
 		return builder.toString();
 	}
-
+	
 }

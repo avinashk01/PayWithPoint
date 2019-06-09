@@ -1,5 +1,7 @@
 package com.example.boot.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.example.boot.entity.EmployeeEntity;
@@ -15,5 +17,10 @@ public class EmployeeDAO {
 		EmployeeEntity res = employeeJPARepository.save(empEntity);
 		return res;
 	}
+	
+	public List<EmployeeEntity> getAllEmployeeDetails(){
+		return employeeJPARepository.findAll();
+	}
+	
 
 }

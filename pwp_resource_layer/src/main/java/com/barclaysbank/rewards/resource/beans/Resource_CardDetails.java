@@ -7,7 +7,13 @@ public class Resource_CardDetails {
 	private String nameOnCard;
 	
 	public Resource_CardDetails() {}
-	
+	public Resource_CardDetails(String cvvNum, String expDate, String nameOnCard) {
+		this.cvvNum = cvvNum;
+		this.expDate = expDate;
+		this.nameOnCard = nameOnCard;
+	}
+
+
 	public String getCvvNum() {
 		return cvvNum;
 	}

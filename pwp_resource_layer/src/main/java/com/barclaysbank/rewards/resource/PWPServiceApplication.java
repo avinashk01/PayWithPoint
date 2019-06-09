@@ -10,14 +10,14 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.barclaysbank.rewards.resource.controller.Resource_BalanceImpl;
+import com.barclaysbank.rewards.resource.controller.Resource_BalanceController;
 import com.barclaysbank.rewards.resource.filter.CorrelationHeaderFilter;
 
 @SpringBootApplication(scanBasePackages= {"com.barclaysbank.rewards"})
 
 public class PWPServiceApplication implements CommandLineRunner{
 	@Autowired
-	Resource_BalanceImpl resourceBalanceImpl;
+	Resource_BalanceController resourceBalanceImpl;
 	public static void main(String[] args) {
 		
 		SpringApplication.run(PWPServiceApplication.class, args);

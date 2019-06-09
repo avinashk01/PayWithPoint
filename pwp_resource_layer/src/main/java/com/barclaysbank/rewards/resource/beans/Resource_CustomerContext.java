@@ -5,7 +5,12 @@ public class Resource_CustomerContext {
 	private Resource_CardDetails cardDtls;
 	
 	public Resource_CustomerContext() {}
-	
+	public Resource_CustomerContext(Resource_ServiceDtls svcDtls, Resource_CardDetails cardDtls) {
+		this.svcDtls = svcDtls;
+		this.cardDtls = cardDtls;
+	}
+
+
 	public Resource_ServiceDtls getSvcDtls() {
 		return svcDtls;
 	}

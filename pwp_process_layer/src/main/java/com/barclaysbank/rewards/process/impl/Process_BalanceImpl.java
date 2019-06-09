@@ -3,7 +3,7 @@ package com.barclaysbank.rewards.process.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.barclaysbank.rewards.balance.dao.bo.DAO_BalanceInfo;
+import com.barclaysbank.rewards.balance.dao.entity.DAO_BalanceInfo;
 import com.barclaysbank.rewards.balance.dao.impl.DAO_BalanceImpl;
 import com.barclaysbank.rewards.process.Process_Balance_I;
 import com.barclaysbank.rewards.process.beans.Process_BalanceResp;
