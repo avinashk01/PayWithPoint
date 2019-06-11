@@ -26,19 +26,6 @@ public class BalanceJPARepositoryTest {
 		assertNotNull(daoBalanceInfo);
 		assertThat(daoBalanceInfo.getAvailablePts()).isEqualTo(16025);
 		
-		
-	}
-	
-	private DAO_BalanceInfo getDaoBalanceInfo() {
-		DAO_BalanceInfo daoBalanceInfo = new DAO_BalanceInfo();
-		daoBalanceInfo.setRewardId(52);
-		daoBalanceInfo.setCardNum("5298000100214488");
-		daoBalanceInfo.setAvailablePts(54080);
-		daoBalanceInfo.setEarnedPts(10253);
-		daoBalanceInfo.setPendingPts(1520);
-		daoBalanceInfo.setUsedPts(254873);
-		
-		return daoBalanceInfo;
 	}
 
 }

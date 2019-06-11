@@ -4,19 +4,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.4.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<groupId>com.barclaysbank</groupId>
+		<artifactId>pwp_parentpom</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<groupId>com.barclaysbank.rewards</groupId>
 	<artifactId>pwp_exception</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
 	<name>pwp_exception</name>
 	<description>pwp_exception is a spring boot project for handling the exception</description>
 
 	<properties>
-		<java.version>1.8</java.version>
 		<maven.test.skip>true</maven.test.skip>
 	</properties>
 
@@ -26,27 +23,7 @@
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 
-	<!-- <build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build> -->
 
 </project>

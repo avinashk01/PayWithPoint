@@ -1,49 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.barclaysbank</groupId>
-		<artifactId>pwp_parentpom</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+	<groupId>com.barclaysbank</groupId>
+	<artifactId>pwp_parentpom</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>pwp_parentpom</name>
+	<description>This is a parent pom</description>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.21.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.barclaysbank.rewards</groupId>
-	<artifactId>pwp_resource_layer</artifactId>
-	<name>pwp_resource_layer</name>
-	<description>pwp_process_layer is a spring boot project for taking the request.</description>
+
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
+	<modules>
+		<module>/pwp_centralized_util</module>
+		<module>/pwp_exception</module>
+		<module>/pwp_validate_dao</module>
+		<module>/pwp_balance_dao</module>
+		<module>/pwp_product_dao</module>
+		<module>/pwp_redeem_dao</module>
+		<module>/pwp_process_layer</module>
+		<module>/pwp_resource_layer</module>
+		
+		
+	</modules>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.barclaysbank.rewards</groupId>
-			<artifactId>pwp_validate_dao</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.barclaysbank.rewards</groupId>
-			<artifactId>pwp_process_layer</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.barclaysbank.rewards</groupId>
-			<artifactId>pwp_centralized_util</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
+			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- <dependency> <groupId>net.sourceforge.cobertura</groupId> <artifactId>cobertura</artifactId> 
+			<optional>true</optional> <version>1.9.4.1</version> </dependency> -->
 	</dependencies>
 
 	<build>
@@ -58,10 +57,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -152,4 +147,6 @@
 			</plugin>
 		</plugins>
 	</reporting>
+
+
 </project>

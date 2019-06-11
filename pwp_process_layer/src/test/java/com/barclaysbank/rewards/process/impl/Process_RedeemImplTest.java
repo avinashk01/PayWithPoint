@@ -42,7 +42,7 @@ public class Process_RedeemImplTest {
 
 	@Before
 	public void setUp() throws Exception {
-		when(daoRedeemImpl.getProduct(anyString())).thenReturn(getDAORedeemProductInfo());
+		when(daoRedeemImpl.getRedeemProduct(anyString())).thenReturn(getDAORedeemProductInfo());
 		when(processRedeemRespBuilder.build((List<DAO_RedeemProductInfo>) anyCollectionOf(DAO_RedeemProductInfo.class))).thenCallRealMethod();
 	}
 

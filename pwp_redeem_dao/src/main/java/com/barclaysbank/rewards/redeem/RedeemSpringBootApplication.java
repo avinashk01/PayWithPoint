@@ -1,13 +1,10 @@
 package com.barclaysbank.rewards.redeem;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.barclaysbank.rewards.redeem.dao.bo.DAO_RedeemProductInfo;
 import com.barclaysbank.rewards.redeem.dao.impl.DAO_RedeemImpl;
 
 @SpringBootApplication

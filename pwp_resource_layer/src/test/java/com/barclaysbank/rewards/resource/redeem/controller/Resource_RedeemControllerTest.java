@@ -1,4 +1,4 @@
-package com.barclaysbank.rewards.resource.controller;
+package com.barclaysbank.rewards.resource.redeem.controller;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
@@ -30,10 +30,11 @@ import com.barclaysbank.rewards.resource.beans.Resource_CardDetails;
 import com.barclaysbank.rewards.resource.beans.Resource_ClientContext;
 import com.barclaysbank.rewards.resource.beans.Resource_ServiceDtls;
 import com.barclaysbank.rewards.resource.builder.Resource_RedeemRespBuilder;
+import com.barclaysbank.rewards.resource.controller.Resource_RedeemController;
 import com.barclaysbank.rewards.resource.validator.ResourceRequestValidator;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(value=Resource_ProductController.class, secure=false)
+@WebMvcTest(value=Resource_RedeemController.class, secure=false)
 public class Resource_RedeemControllerTest {
 	@Autowired
 	private MockMvc mockMvc;
@@ -54,6 +55,7 @@ public class Resource_RedeemControllerTest {
 
 	@Test
 	public void test() throws Exception {
+		String expected = "{'statusBlock':{'respCode':'0','respMsg':'Success','errorCode':null,'errorMsg':null},'redeemInfoList':[{'orderId':1,'purchaseDate':2007,'deliveryDate':2006,'productName':'Mouse','price':300.0},{'orderId':2,'purchaseDate':1992,'deliveryDate':1990,'productName':'Keybord','price':500.0}]}";
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.set("msgTs", "2019-06-09 11:00");
 		httpHeaders.set("clientId", "1");
@@ -65,10 +67,10 @@ public class Resource_RedeemControllerTest {
 		httpHeaders.set("cvvNum", "895");
 		httpHeaders.set("expDate", "2022-02-05");
 		httpHeaders.set("nameOnCard", "Denial");
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/pwpservice/balance/5298000100265987").headers(httpHeaders);
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/pwpservice/redeem/5298000100265987").headers(httpHeaders);
 		MvcResult mvcResult = mockMvc.perform(requestBuilder).andReturn();
 		System.out.println("RESPONSE DATA : "+mvcResult.getResponse().getContentAsString());
-		JSONAssert.assertEquals("", mvcResult.getResponse().getContentAsString(), true);
+		JSONAssert.assertEquals(expected, mvcResult.getResponse().getContentAsString(), true);
 
 	}
 	

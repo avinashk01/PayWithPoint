@@ -37,10 +37,10 @@ public class DAO_RedeemImplTest {
 
 	@Test
 	public void test() {
-		List<DAO_RedeemProductInfo> redeemProductInfoList = daoRedeemImpl.getProduct("5426974633");
+		List<DAO_RedeemProductInfo> redeemProductInfoList = daoRedeemImpl.getRedeemProduct("5426974633");
 		assertNotNull(redeemProductInfoList);
 		verify(redeemJPARepository, times(1)).findByCardNum("5426974633");
-		assertThat(daoRedeemImpl.getProduct("5426974633").size()).isEqualTo(2);
+		assertThat(daoRedeemImpl.getRedeemProduct("5426974633").size()).isEqualTo(2);
 	}
 	
 	private List<DAO_RedeemProductInfo> getRedeemProductsInfo(){

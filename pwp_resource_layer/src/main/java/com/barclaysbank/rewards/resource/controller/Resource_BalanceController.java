@@ -1,5 +1,7 @@
 package com.barclaysbank.rewards.resource.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +22,7 @@ import com.barclaysbank.rewards.resource.validator.ResourceRequestValidator;
 @RestController
 @RequestMapping("/pwpservice/balance")
 public class Resource_BalanceController{
+	private final static Logger logger = LoggerFactory.getLogger(Resource_BalanceController.class);
 	@Autowired
 	Process_BalanceImpl processBalanceImpl;
 	@Autowired
@@ -41,6 +44,8 @@ public class Resource_BalanceController{
 			@RequestHeader("expDate") String expDate,
 			@RequestHeader("nameOnCard") String nameOnCard){
 		
+		logger.debug("#### Enter into getBalance()  ####");
+		
 		Resource_ServiceDtls svcDtls = new Resource_ServiceDtls(svcName,apiName,version);
 		Resource_CardDetails cardDtls = new Resource_CardDetails(cvvNum,expDate,nameOnCard);
 		Resource_ClientContext clntContext = new Resource_ClientContext(msgTs, clientId, channelId, correlationId);
@@ -48,6 +53,7 @@ public class Resource_BalanceController{
 		try {
 			resourceRequestValidator.validateRequest(cardNum,clntContext,svcDtls,cardDtls);
 		} catch (Exception e) {
+			logger.error("#### Fail to validate the requested data ####");
 			stsBlc.setErrorCode("4050");
 			stsBlc.setErrorMsg("Invalid Request");
 			e.printStackTrace();
@@ -66,6 +72,7 @@ public class Resource_BalanceController{
 
 		Resource_BalanceResp balanceResp = resourceBalanceRespBuilder.build(processBalanceResp);
 		balanceResp.setStatusBlock(stsBlc);
+		logger.info("#### Exit from getBalance()  #### Resource_BalanceResp : "+balanceResp+"####");
 		return balanceResp;
 	}
 

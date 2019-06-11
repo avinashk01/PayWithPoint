@@ -1,5 +1,7 @@
 package com.barclaysbank.rewards.resource.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +24,7 @@ import com.barclaysbank.rewards.resource.validator.ResourceRequestValidator;
 @RestController
 @RequestMapping("/pwpservice/product")
 public class Resource_ProductController{
+	private final static Logger logger = LoggerFactory.getLogger(Resource_ProductController.class);
 
 	@Autowired
 	Process_ProductImpl processProductImpl;
@@ -45,6 +48,8 @@ public class Resource_ProductController{
 			@RequestHeader("cvvNum") String cvvNum,
 			@RequestHeader("expDate") String expDate,
 			@RequestHeader("nameOnCard") String nameOnCard) {
+		
+		logger.info("#### Enter into getProduct() ####");
 
 
 		Resource_ServiceDtls svcDtls = new Resource_ServiceDtls(svcName,apiName,version);
@@ -55,6 +60,7 @@ public class Resource_ProductController{
 		try {
 			resourceRequestValidator.validateRequest(cardNum,clntContext, svcDtls,cardDtls);
 		} catch (Exception e) {
+			logger.error("#### Fail to validate the requested data ####");
 			stsBlc.setErrorCode("4050");
 			stsBlc.setErrorMsg("Invalid Request");
 			throw new BadRequestException("4050","Invalid Request");
@@ -73,7 +79,7 @@ public class Resource_ProductController{
 		}
 		Resource_ProductResp resourceProductResp = resourceProductRespBuilder.build(processProductResp);
 		resourceProductResp.setStatusBlock(stsBlc);
-
+		logger.info("#### Exit from getProduct()  #### Resource_ProductResp : "+resourceProductResp+" ####");
 		return resourceProductResp;
 	}
 

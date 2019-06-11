@@ -1,5 +1,7 @@
 package com.barclaysbank.rewards.resource.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +23,8 @@ import com.barclaysbank.rewards.resource.validator.ResourceRequestValidator;
 @RestController
 @RequestMapping("/pwpservice/redeem")
 public class Resource_RedeemController{
-
+	private final static Logger logger = LoggerFactory.getLogger(Resource_RedeemController.class);
+	
 	@Autowired
 	Process_RedeemImpl processRedeemImpl;
 	@Autowired
@@ -42,6 +45,8 @@ public class Resource_RedeemController{
 			@RequestHeader("cvvNum") String cvvNum,
 			@RequestHeader("expDate") String expDate,
 			@RequestHeader("nameOnCard") String nameOnCard) {
+		
+		logger.info("#### Enter into getRedeem()  ####");
 
 		Resource_ServiceDtls svcDtls = new Resource_ServiceDtls(svcName,apiName,version);
 		Resource_CardDetails cardDtls = new Resource_CardDetails(cvvNum,expDate,nameOnCard);
@@ -51,13 +56,16 @@ public class Resource_RedeemController{
 		try {
 			resourceRequestValidator.validateRequest(cardNum,clntContext, svcDtls,cardDtls);
 		} catch (Exception e) {
+			logger.error("#### Fail to validate the requested data ####");
 			stsBlc.setErrorCode("4050");
 			stsBlc.setErrorMsg("Invalid Request");
 			throw new BadRequestException("4050",e.toString());
 		}
 
 		Process_RedeemResp processRedeemResp = processRedeemImpl.getRedeem(cardNum);
+		//System.out.println(processRedeemResp);
 		Resource_RedeemResp resourceRedeemResp = resourceRedeemRespBuilder.build(processRedeemResp);
+		System.out.println(resourceRedeemResp);
 		if(resourceRedeemResp != null) {
 			stsBlc.setRespCode("0");
 			stsBlc.setRespMsg("Success");
@@ -68,6 +76,7 @@ public class Resource_RedeemController{
 		}
 
 		resourceRedeemResp.setStatusBlock(stsBlc);
+		logger.info("#### Exit from getRedeem()  #### Resource_ProductResp : "+resourceRedeemResp+" ####");
 		return resourceRedeemResp;
 
 	}
