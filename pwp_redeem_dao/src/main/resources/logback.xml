@@ -38,7 +38,7 @@
     </root>
  
     <!-- LOG "com.barclaysbank*" at TRACE level -->
-    <logger name="com.barclaysbank" level="info" additivity="false">
+    <logger name="com.barclaysbank" level="debug" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </logger>

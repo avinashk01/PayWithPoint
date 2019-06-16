@@ -6,11 +6,16 @@
 		<groupId>com.barclaysbank</groupId>
 		<artifactId>pwp_parentpom</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pwp_parentpom/pom.xml</relativePath>
 	</parent>
 	<groupId>com.barclaysbank.rewards</groupId>
 	<artifactId>pwp_validate_dao</artifactId>
 	<name>pwp_validate_dao</name>
 	<description>pwp_exception is a spring boot project for validating</description>
+	
+	<properties>
+		<maven.test.skip>true</maven.test.skip>
+	</properties>
 
 	<dependencies>
 		<dependency>

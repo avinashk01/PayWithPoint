@@ -13,14 +13,13 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.21.RELEASE</version>
-		<!-- <relativePath /> lookup parent from repository -->
 	</parent>
 
 	<properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-    </properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 
 	<modules>
 		<module>../pwp_centralized_util</module>
@@ -31,8 +30,6 @@
 		<module>../pwp_redeem_dao</module>
 		<module>../pwp_process_layer</module>
 		<module>../pwp_resource_layer</module>
-		
-		
 	</modules>
 
 	<dependencies>
@@ -48,43 +45,32 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
-				<version>2.7.1</version>
+				<version>3.3</version>
 				<configuration>
-					<targetJdk>1.7</targetJdk>
+					<targetJdk>1.8</targetJdk>
 					<linkXref>true</linkXref>
 					<rulesets>
-						<ruleset>rulesets/basic.xml</ruleset>
-						<ruleset>rulesets/braces.xml</ruleset>
-						<ruleset>rulesets/clone.xml</ruleset>
-						<ruleset>rulesets/codesize.xml</ruleset>
-						<ruleset>rulesets/coupling.xml</ruleset>
-						<ruleset>rulesets/design.xml</ruleset>
-						<ruleset>rulesets/finalizers.xml</ruleset>
-						<ruleset>rulesets/imports.xml</ruleset>
-						<ruleset>rulesets/j2ee.xml</ruleset>
-						<ruleset>rulesets/javabeans.xml</ruleset>
-						<ruleset>rulesets/junit.xml</ruleset>
-						<ruleset>rulesets/logging-jakarta-commons.xml</ruleset>
-						<ruleset>rulesets/logging-java.xml</ruleset>
-						<ruleset>rulesets/migrating.xml</ruleset>
-						<ruleset>rulesets/optimizations.xml</ruleset>
-						<ruleset>rulesets/strictexception.xml</ruleset>
-						<ruleset>rulesets/strings.xml</ruleset>
-						<ruleset>rulesets/sunsecure.xml</ruleset>
-						<ruleset>rulesets/unusedcode.xml</ruleset>
+						<ruleset>rulesets/java/basic.xml</ruleset>
+						<ruleset>rulesets/java/braces.xml</ruleset>
+						<ruleset>rulesets/java/clone.xml</ruleset>
+						<ruleset>rulesets/java/codesize.xml</ruleset>
+						<ruleset>rulesets/java/coupling.xml</ruleset>
+						<ruleset>rulesets/java/design.xml</ruleset>
+						<ruleset>rulesets/java/finalizers.xml</ruleset>
+						<ruleset>rulesets/java/imports.xml</ruleset>
+						<ruleset>rulesets/java/j2ee.xml</ruleset>
+						<ruleset>rulesets/java/javabeans.xml</ruleset>
+						<ruleset>rulesets/java/junit.xml</ruleset>
+						<ruleset>rulesets/java/logging-jakarta-commons.xml</ruleset>
+						<ruleset>rulesets/java/logging-java.xml</ruleset>
+						<ruleset>rulesets/java/migrating.xml</ruleset>
+						<ruleset>rulesets/java/optimizations.xml</ruleset>
+						<ruleset>rulesets/java/strictexception.xml</ruleset>
+						<ruleset>rulesets/java/strings.xml</ruleset>
+						<ruleset>rulesets/java/sunsecure.xml</ruleset>
+						<ruleset>rulesets/java/unusedcode.xml</ruleset>
 					</rulesets>
 				</configuration>
 			</plugin>
@@ -106,30 +92,30 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-pmd-plugin</artifactId>
-				<version>2.7.1</version>
+				<version>3.3</version>
 				<configuration>
-					<targetJdk>1.7</targetJdk>
+					<targetJdk>1.8</targetJdk>
 					<linkXref>true</linkXref>
 					<rulesets>
-						<ruleset>rulesets/basic.xml</ruleset>
-						<ruleset>rulesets/braces.xml</ruleset>
-						<ruleset>rulesets/clone.xml</ruleset>
-						<ruleset>rulesets/codesize.xml</ruleset>
-						<ruleset>rulesets/coupling.xml</ruleset>
-						<ruleset>rulesets/design.xml</ruleset>
-						<ruleset>rulesets/finalizers.xml</ruleset>
-						<ruleset>rulesets/imports.xml</ruleset>
-						<ruleset>rulesets/j2ee.xml</ruleset>
-						<ruleset>rulesets/javabeans.xml</ruleset>
-						<ruleset>rulesets/junit.xml</ruleset>
-						<ruleset>rulesets/logging-jakarta-commons.xml</ruleset>
-						<ruleset>rulesets/logging-java.xml</ruleset>
-						<ruleset>rulesets/migrating.xml</ruleset>
-						<ruleset>rulesets/optimizations.xml</ruleset>
-						<ruleset>rulesets/strictexception.xml</ruleset>
-						<ruleset>rulesets/strings.xml</ruleset>
-						<ruleset>rulesets/sunsecure.xml</ruleset>
-						<ruleset>rulesets/unusedcode.xml</ruleset>
+						<ruleset>rulesets/java/basic.xml</ruleset>
+						<ruleset>rulesets/java/braces.xml</ruleset>
+						<ruleset>rulesets/java/clone.xml</ruleset>
+						<ruleset>rulesets/java/codesize.xml</ruleset>
+						<ruleset>rulesets/java/coupling.xml</ruleset>
+						<ruleset>rulesets/java/design.xml</ruleset>
+						<ruleset>rulesets/java/finalizers.xml</ruleset>
+						<ruleset>rulesets/java/imports.xml</ruleset>
+						<ruleset>rulesets/java/j2ee.xml</ruleset>
+						<ruleset>rulesets/java/javabeans.xml</ruleset>
+						<ruleset>rulesets/java/junit.xml</ruleset>
+						<ruleset>rulesets/java/logging-jakarta-commons.xml</ruleset>
+						<ruleset>rulesets/java/logging-java.xml</ruleset>
+						<ruleset>rulesets/java/migrating.xml</ruleset>
+						<ruleset>rulesets/java/optimizations.xml</ruleset>
+						<ruleset>rulesets/java/strictexception.xml</ruleset>
+						<ruleset>rulesets/java/strings.xml</ruleset>
+						<ruleset>rulesets/java/sunsecure.xml</ruleset>
+						<ruleset>rulesets/java/unusedcode.xml</ruleset>
 					</rulesets>
 
 				</configuration>

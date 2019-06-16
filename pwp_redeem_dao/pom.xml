@@ -6,6 +6,7 @@
 		<groupId>com.barclaysbank</groupId>
 		<artifactId>pwp_parentpom</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pwp_parentpom/pom.xml</relativePath>
 	</parent>
 	<groupId>com.barclaysbank.rewards</groupId>
 	<artifactId>pwp_redeem_dao</artifactId>

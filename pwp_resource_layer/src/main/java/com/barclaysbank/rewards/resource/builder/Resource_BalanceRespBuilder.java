@@ -12,7 +12,7 @@ import com.barclaysbank.rewards.resource.beans.Resource_BalanceResp;
 public class Resource_BalanceRespBuilder {
 	private final static Logger logger = LoggerFactory.getLogger(Resource_BalanceRespBuilder.class);
 	public Resource_BalanceResp build(Process_BalanceResp pbResp) {
-		logger.error("#### ENTER INTO ResourceBalanceRespBuilder ####");
+		logger.debug("#### Enter into ResourceBalanceRespBuilder ####");
 		
 		Resource_BalanceResp rbResp = new Resource_BalanceResp();
 		Resource_BalanceInfo balInfo = new Resource_BalanceInfo();		
@@ -22,6 +22,7 @@ public class Resource_BalanceRespBuilder {
 		balInfo.setPendingPts(pbResp.getPendingPts());
 		balInfo.setUsedPts(pbResp.getUsedPts());
 		rbResp.setBalInfo(balInfo);
+		logger.debug("#### Exit from ResourceBalanceRespBuilder ####");
 		return rbResp;
 		
 	}

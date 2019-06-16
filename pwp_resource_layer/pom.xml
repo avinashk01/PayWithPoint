@@ -7,6 +7,7 @@
 		<groupId>com.barclaysbank</groupId>
 		<artifactId>pwp_parentpom</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pwp_parentpom/pom.xml</relativePath>
 
 	</parent>
 	<groupId>com.barclaysbank.rewards</groupId>
@@ -48,6 +49,13 @@
 
 	<build>
 		<plugins>
+
+<!-- 			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+ -->
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -59,10 +67,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+			
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
